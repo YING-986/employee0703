@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.firstdevelop.boot.mapper.EmployeeListMapper">
+  <select id="searchAll" resultType="com.firstdevelop.boot.entity.EmployeeList">
+    SELECT id, name, department, email, phone FROM employee_list
+  </select>
+  
+  <insert id="insert" parameterType="com.firstdevelop.boot.entity.EmployeeList">
+    INSERT INTO employee_list (id, name, department, email, phone)
+    VALUES (#{id}, #{name}, #{department}, #{email}, #{phone})
+  </insert>
+  
+  <delete id="deleteById" parameterType="String">
+    DELETE FROM employee_list WHERE id = #{id}
+  </delete>
+
+</mapper>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザー</title>
+</head>
+<body>
+    <form action="/student/regist" method="post">
+		<div>
+			学生名:<input id="name" type="text" name="name"/>
+		</div>
+		<div>
+			年齢:<input id="age" type="text" name="age"/>
+		</div>
+		<div>
+			誕生日:<input id="birthday" type="text" name="birthday"/>
+		</div>
+		<div>
+			成績:<input id="score" type="text" name="score"/>
+		</div>
+		<div>
+			クラスID:<input id="classid" type="text" name="classid"/>
+		</div>
+		
+		<input type="submit" value="登録">
+	</form>
+</body>
+</html>

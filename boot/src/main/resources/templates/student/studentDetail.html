@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>ユーザー</title>
+</head>
+<body>
+    <a th:text="${title}"></a>
+    <table border="1" style="border-collapse:collapse">
+        <thead style="background:yellow">
+            <tr>
+            	<td style="width: 5%">id</td>
+                <td>学生名</td>
+                <td>年齢</td>
+                <td>誕生日</td>
+                <td>成績</td>
+                <td>クラスＩＤ</td>
+                <td>消除</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${studentList.size()} eq 0">
+                <td colspan="5">商品情報が存在しません。</td>
+            </tr>
+            <tr th:each="student : ${studentList}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.birthday}"></td>
+                <td th:text="${student.age}"></td>
+                <td th:text="${student.score}"></td>
+                <td th:text="${student.classid}"></td>
+                <td><a th:href="@{/student/delete/} + ${student.id}">消除</a></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
